@@ -1,0 +1,39 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    li {
+        list-style: none;
+        font-weight: 700;
+        color: hsl(0, 0%, 75%);
+        cursor: pointer;
+    }
+    li:hover {
+        color: hsl(255, 11%, 22%);
+    }
+    .left {
+        display: flex;
+        align-items: center;
+        ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+    }
+    .login ul {
+        display: flex;
+        align-items: baseline;
+        gap: 2rem;
+    }
+    .signup {
+        padding:  0.5rem 1.5rem 0.5rem 1.5rem ;
+        border-radius: 2rem;
+        color: white;
+        background-color: hsl(180, 66%, 49%);
+    }
+    .signup:hover {
+        opacity: 0.5;
+        color: white;
+    }
+}
