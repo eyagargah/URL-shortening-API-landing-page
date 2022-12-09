@@ -3,10 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './pages/header/header.component';
+import { FooterComponent } from './pages/footer/footer.component';
+import { MainComponent } from './pages/main/main.component';
+import { LinkSectionComponent } from './pages/link-section/link-section.component';
+import { StatsComponent } from './pages/stats/stats.component';
+import { BenefitSectionComponent } from './pages/benefit-section/benefit-section.component';
+import { LinkBoostComponent } from './pages/link-boost/link-boost.component';
+import { ServiceDescriptionComponent } from './pages/service-description/service-description.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    MainComponent,
+    LinkSectionComponent,
+    StatsComponent,
+    BenefitSectionComponent,
+    LinkBoostComponent,
+    ServiceDescriptionComponent,
   ],
   imports: [
     BrowserModule,
