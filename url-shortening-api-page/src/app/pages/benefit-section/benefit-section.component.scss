@@ -1,6 +1,37 @@
 .cards {
+    margin: 3rem 7rem 3rem 7rem;
+
+    margin-top: 3rem;
     display: flex;
-    gap: 2rem;
-   
+    .vl {
+        margin-top: 15rem;
+        border-left: 3rem solid hsl(180, 66%, 49%);
+        height: 1rem;
+        width: 3rem;
+      }
+      
+    .card {
+        padding: 2rem;
+       
+        h1 {
+            color:hsl(255, 11%, 22%);
+        }
+        p {
+            color:hsl(0, 0%, 75%);
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+    }
+    img {
+        background-color: hsl(257, 27%, 26%);
+        padding: 2rem;
+        border-radius: 5rem;
+    }
     
+    .records {
+        margin-top: 2rem;
+    }
+    .custom {
+        margin-top: 5rem;
+    }
 }
