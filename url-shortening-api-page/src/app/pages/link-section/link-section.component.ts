@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-link-section',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class LinkSectionComponent {
 
+  @Input() shortLink: any;
+  linkData : any;
+  constructor( private api: ApiService) {}
+
+  ngOnInit() {
+    this.api.getShorterLinks().subscribe((data) => {
+      this.linkData = data
+    })
+}
 }
