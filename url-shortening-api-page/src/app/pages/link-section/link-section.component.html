@@ -5,28 +5,23 @@
       name="link"
       id="link-input"
       placeholder="Shorten a link here..."
+      required
+     
     />
     <button>Shorten it!</button>
   </div>
-  <div class="link-list">
+  <div class="link-list" *ngFor="let link in linkData">
     <div class="link">
-      <h4>https://www.frontendmentor.io</h4>
+      <h4>{{link.full_short_link}}</h4>
       <div class="new-link">
-        <h4>https://re.link/k4lKyk</h4>
+        <h4>{{link.short_link}}</h4>
         <button>Copy</button>
       </div>
     </div>
     <div class="link">
-      <h4>https://www.frontendmentor.io</h4>
+      <h4>{{link.full_short_link}}</h4>
       <div class="new-link">
-        <h4>https://re.link/k4lKyk</h4>
-        <button>Copy</button>
-      </div>
-    </div>
-    <div class="link">
-      <h4>https://www.frontendmentor.io</h4>
-      <div class="new-link">
-        <h4>https://re.link/k4lKyk</h4>
+        <h4>{{link.short_link2}}</h4>
         <button>Copy</button>
       </div>
     </div>
