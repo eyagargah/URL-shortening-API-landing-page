@@ -1,20 +1,24 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-link-section',
   templateUrl: './link-section.component.html',
-  styleUrls: ['./link-section.component.scss']
+  styleUrls: ['./link-section.component.scss'],
 })
 export class LinkSectionComponent {
+  linkToShorten: string = '';
+  linkData: any;
 
-  @Input() shortLink: any;
-  linkData : any;
-  constructor( private api: ApiService) {}
+  shortenLink() {
+    console.log('from component ' + this.linkToShorten);
+    this.api.getShortLinks(this.linkToShorten).subscribe((data) => {
+      this.linkData = Object.values(data);
+      console.table(this.linkData);
+    });
+  }
 
-  ngOnInit() {
-    this.api.getShorterLinks().subscribe((data) => {
-      this.linkData = data
-    })
-}
+  constructor(private api: ApiService) {}
+
+  ngOnInit() {}
 }
