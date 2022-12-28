@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { StatsComponent } from './pages/stats/stats.component';
 import { BenefitSectionComponent } from './pages/benefit-section/benefit-section.component';
 import { LinkBoostComponent } from './pages/link-boost/link-boost.component';
 import { ServiceDescriptionComponent } from './pages/service-description/service-description.component';
+import { ShortLinksComponent } from './pages/short-links/short-links.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +26,13 @@ import { ServiceDescriptionComponent } from './pages/service-description/service
     BenefitSectionComponent,
     LinkBoostComponent,
     ServiceDescriptionComponent,
+    ShortLinksComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
