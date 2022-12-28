@@ -1,0 +1,19 @@
+<div class="shortlinks">
+  <div class="links" *ngIf="linkData.length > 0">
+    <div class="link">
+      {{ linkData[1]?.short_link }}
+      {{ linkData[1]?.full_short_link }}
+      <button>Copy</button>
+    </div>
+    <div class="link">
+      {{ linkData[1]?.short_link2 }}
+      {{ linkData[1]?.full_short_link2 }}
+      <button>Copy</button>
+    </div>
+    <div class="link">
+      {{ linkData[1]?.short_link3 }}
+      {{ linkData[1]?.full_short_link3}}
+      <button>Copy</button>
+    </div>
+  </div>
+</div>
