@@ -42,3 +42,9 @@ button:hover {
     gap: 3rem;
 }
 
+.link-form input.ng-invalid {
+    border: solid 2px red;
+}
+.error {
+    color: red;
+}
