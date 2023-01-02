@@ -1,3 +1,48 @@
 .shortlinks {
-    margin: 1rem;
+  margin: 2rem;
+  button {
+    border-radius: 0.3rem;
+    border: none;
+    padding: 1rem 2rem 1rem 2rem;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  button:hover {
+    opacity: 0.7;
+  }
+ 
+  .link-list {
+    margin: 2rem;
+   
+    .link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      h4 {
+        font-weight: 100;
+      }
+      .new-link {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+
+        h4 {
+          font-weight: 100;
+          color: hsl(180, 66%, 49%);
+        }
+      }
+    }
+  }
+
+
+}
+.not-active {
+  background-color: hsl(180, 66%, 49%);
+
+}
+.active {
+  background-color: hsl(260, 8%, 14%) !important;
 }
