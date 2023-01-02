@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
 
 @Component({
@@ -10,11 +11,16 @@ export class LinkSectionComponent {
   linkToShorten: string = '';
   linkData: any;
 
+  linkForm = new FormGroup({
+    linkToShorten: new FormControl('', Validators.required)
+  });
+
+  getLink(){
+    return this.linkForm.get('linkToShorten');  
+  }
   shortenLink() {
-    console.log('from component ' + this.linkToShorten);
     this.api.getShortLinks(this.linkToShorten).subscribe((data) => {
       this.linkData = Object.values(data);
-      console.table(this.linkData);
     });
   }
 
