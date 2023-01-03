@@ -33,7 +33,7 @@ import { ShortLinksComponent } from './pages/short-links/short-links.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
