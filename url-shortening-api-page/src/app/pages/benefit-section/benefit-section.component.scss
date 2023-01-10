@@ -6,69 +6,98 @@
 
 .cards {
   background-color: #ececec;
-  display: grid;
-  grid-template-columns: 1fr;
-  margin-left: auto;
-  margin-right: auto;
+  align-items: center;
+  justify-content: center;
+  .container {
+    display: grid;
+    grid-template-columns: auto-fit;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
 
-  .vl {
-    margin-left: 11.3rem;
-    border-top: 5rem solid hsl(180, 66%, 49%);
-    height: 1.1rem;
-    width: 0.7rem;
-  }
-  .card:last-child {
-    margin-bottom: 5rem;
-  }
-
-  .card {
-    .text-content {
-      background-color: white;
-      padding: 1rem;
-      width: 21rem;
-      margin: 3rem 1rem 0 1rem;
-      border-radius: 0.5rem;
-      text-align: center;
-
-      h1 {
-        margin-top: 5rem;
-        color: hsl(255, 11%, 22%);
-        font-size: 1.5rem;
-      }
-      p {
-        color: hsl(0, 0%, 75%);
-        font-size: 1rem;
-        font-weight: 500;
-        text-align: center;
-        margin: 1rem;
-      }
+    .vl {
+      margin-left: 11.3rem;
+      border-top: 5rem solid hsl(180, 66%, 49%);
+      height: 1.1rem;
+      width: 0.7rem;
+    }
+    .card:last-child {
+      margin-bottom: 5rem;
     }
 
-    img {
-      position: absolute;
-      left: 8.3rem;
-      justify-content: center;
-      background-color: hsl(257, 27%, 26%);
-      padding: 2rem;
-      border-radius: 5rem;
+    .card {
+      position: relative;
+      .text-content {
+        background-color: white;
+        padding: 1rem;
+        width: 20rem;
+        margin: 3rem 1rem 0 1rem;
+        border-radius: 0.5rem;
+        text-align: center;
+
+        h1 {
+          margin-top: 5rem;
+          color: hsl(255, 11%, 22%);
+          font-size: 1.5rem;
+        }
+        p {
+          color: hsl(0, 0%, 75%);
+          font-size: 1rem;
+          font-weight: 500;
+          text-align: center;
+          margin: 1rem;
+        }
+      }
+
+      img {
+        position: absolute;
+        left: 8.3rem;
+        justify-content: center;
+        background-color: hsl(257, 27%, 26%);
+        padding: 2rem;
+        border-radius: 5rem;
+      }
     }
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1000px) {
   .cards {
     overflow: hidden;
-    display: grid;
-    grid-template-columns: 0.5fr 0.1fr 0.6fr 0.1fr 0.6fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    align-items: baseline;
-    .card {
-      margin: 0 auto;
-    }
-    .vl {
-      margin: 0;
-      border-top: 0;
-      border-left: 3rem solid hsl(180, 66%, 49%);
+    justify-content: center;
+    align-items: center;
+    .container {
+      margin: auto;
+      max-width: 80%;
+      padding: 10px;
+      display: grid;
+      justify-content: center;
+      align-items: baseline;
+      grid-template-columns: 30% 5% 30% 5% 30%;
+      grid-template-rows: 1fr;
+      
+      .vl {
+        margin-left: 0;
+        border-top: 0;
+        border-left: 6rem solid hsl(180, 66%, 49%);
+        height: 1rem;
+        width: 4rem;
+      }
+      
+      .card img {
+        left: 3rem;
+      }
+      .brand {
+        left: 1rem;
+      }
+      .records {
+        left: 0.7rem;
+        top: 1.5rem;
+      }
+
+      .custom {
+        top: 3rem;
+      }
+     
     }
   }
 }
