@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./benefit-section.component.scss']
 })
 export class BenefitSectionComponent {
-
+  
 }
