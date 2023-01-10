@@ -1,17 +1,19 @@
 <div class="link-shortener">
-  <form [formGroup]="linkForm" class="link-form">
-    <input
-      type="url"
-      name="link"
-      id="link-input"
-      placeholder="Shorten a link here..."
-      required
-      formControlName="linkToShorten"
-      class="form-control"
-      [(ngModel)]="linkToShorten"
-    />
-    <span class="error" *ngIf="!linkToShorten">Please add a link</span>
-    <button (click)="shortenLink()">Shorten it!</button>
-  </form>
-  <app-short-links [linkData]="linkData"></app-short-links>
+  <div class="container">
+    <form [formGroup]="linkForm" class="link-form">
+      <input
+        type="url"
+        name="link"
+        id="link-input"
+        placeholder="Shorten a link here..."
+        required
+        formControlName="linkToShorten"
+        class="form-control"
+        [(ngModel)]="linkToShorten"
+      />
+      <span class="error" *ngIf="!linkToShorten">Please add a link</span>
+      <button (click)="shortenLink()">Shorten it!</button>
+    </form>
+    <app-short-links [linkData]="linkData"></app-short-links>
+  </div>
 </div>
