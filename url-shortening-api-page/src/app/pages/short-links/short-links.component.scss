@@ -1,52 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .shortlinks {
   background-color: #ececec;
+  padding: 2rem 0 1rem 0;
+
   .container {
-    margin: 2rem;
-    button {
-      border-radius: 0.3rem;
-      border: none;
-      padding: 1rem 2rem 1rem 2rem;
-      color: white;
-      font-size: 1rem;
-      font-weight: 700;
-      cursor: pointer;
-    }
-    button:hover {
-      opacity: 0.7;
-    }
-   
     .link-list {
-      margin: 2rem;
-     
       .link {
+        background-color: white;
+        border-radius: 0.5rem;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: space-between;
-  
+        margin-bottom: 1rem;
+
+        hr {
+          background-color: #ececec;
+          width: 100%;
+          text-align: left;
+          margin-left: 0;
+        }
         h4 {
+          margin-left: 0;
+          text-align: left;
           font-weight: 100;
+          font-size: 1.4rem;
+          padding: 1rem;
         }
         .new-link {
           display: flex;
+          flex-direction: column;
           align-items: center;
-          gap: 3rem;
-  
+
           h4 {
+            margin: auto;
+            text-align: left;
             font-weight: 100;
             color: hsl(180, 66%, 49%);
+          }
+
+          button {
+            width: 19rem;
+            height: 3.3rem;
+            border-radius: 0.3rem;
+            border: none;
+            padding: 1rem 2rem 1rem 2rem;
+            color: white;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-bottom: 1rem;
+          }
+          button:hover {
+            opacity: 0.7;
           }
         }
       }
     }
-  
-  
   }
+
   .not-active {
     background-color: hsl(180, 66%, 49%);
-  
   }
   .active {
     background-color: hsl(260, 8%, 14%) !important;
   }
+}
+
+@media screen and (min-width: 768px) {
+  .shortlinks {
+    .container {
+      .link-list {
+        .link {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+
+          hr {
+            display: none;
+          }
+          h4 {
+            margin-left: 0;
+          }
+          .new-link {
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+            margin-right: 1rem;
+            h4 {
+              margin: auto;
+              text-align: left;
+              font-weight: 100;
+              color: hsl(180, 66%, 49%);
+            }
+
+            button {
+              width: 50%;
+              align-items: center;
+              margin-top: 1rem;
+            }
+            button:hover {
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+    }
   }
- 
+}

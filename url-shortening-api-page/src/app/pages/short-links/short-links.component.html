@@ -3,6 +3,7 @@
     <div class="link-list" *ngIf="linkData?.length > 0">
       <div class="link">
         <h4>{{ linkData[1]?.full_short_link }}</h4>
+        <hr>
         <div class="new-link">
           <h4>{{ linkData[1]?.short_link }}</h4>
           <button id="copyBtn" (click)="copyLink($event)" class="not-active">
@@ -12,6 +13,7 @@
       </div>
       <div class="link">
         <h4>{{ linkData[1]?.full_short_link2 }}</h4>
+        <hr>
         <div class="new-link">
           <h4>{{ linkData[1]?.short_link2 }}</h4>
           <button id="copyBtn" (click)="copyLink($event)" class="not-active">
@@ -21,6 +23,7 @@
       </div>
       <div class="link">
         <h4>{{ linkData[1]?.full_short_link3 }}</h4>
+        <hr>
         <div class="new-link">
           <h4>{{ linkData[1]?.short_link3 }}</h4>
           <button id="copyBtn" (click)="copyLink($event)" class="not-active">
