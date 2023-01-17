@@ -30,7 +30,7 @@
       .text-content {
         background-color: white;
         padding: 1rem;
-        width: 20rem;
+        width: 21rem;
         margin: 3rem 1rem 0 1rem;
         border-radius: 0.5rem;
         text-align: center;
@@ -42,7 +42,7 @@
         }
         p {
           color: hsl(0, 0%, 75%);
-          font-size: 1rem;
+          font-size: 0.9rem;
           font-weight: 500;
           text-align: center;
           margin: 1rem;
@@ -60,21 +60,21 @@
     }
   }
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1024px) {
   .cards {
     overflow: hidden;
     justify-content: center;
     align-items: center;
     .container {
       margin: auto;
-      max-width: 80%;
+      max-width: 85%;
       padding: 10px;
       display: grid;
       justify-content: center;
       align-items: baseline;
       grid-template-columns: 30% 5% 30% 5% 30%;
       grid-template-rows: 1fr;
-      
+
       .vl {
         margin-left: 0;
         border-top: 0;
@@ -82,7 +82,17 @@
         height: 1rem;
         width: 4rem;
       }
-      
+      .card .text-content {
+        width: 19rem;
+        text-align: left;
+      }
+      .text-content h1 {
+        margin-left: 1rem;
+      }
+      .text-content p {
+        text-align: left !important;
+      }
+
       .card img {
         left: 3rem;
       }
@@ -97,7 +107,19 @@
       .custom {
         top: 3rem;
       }
-     
+    }
+  }
+}
+@media screen and (min-width: 1200px) {
+  .cards {
+    .container {
+      max-width: 80rem;
+
+      .card {
+        .text-content {
+          width: 22rem;
+        }
+      }
     }
   }
 }
