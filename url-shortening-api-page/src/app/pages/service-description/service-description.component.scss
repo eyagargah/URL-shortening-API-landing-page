@@ -13,7 +13,7 @@
   align-items: center;
 
   .image {
-    padding: 10rem ;    
+    padding: 11rem ;    
     width: 80%;
     background: url(../../../assets/images/illustration-working.svg) no-repeat;
     background-size: cover;
@@ -57,11 +57,12 @@
     justify-content: space-between;
     gap: 4rem;
     .image {
-      width: 40%;
-      padding: 20rem;
+      width: 50%;
+      padding: 18rem;
     }
 
     .content {
+      margin-bottom: 8rem;
       width: 60%;
       margin-left: 6rem;
       text-align: left;
@@ -70,14 +71,14 @@
     h1 {
       color: hsl(255, 11%, 22%);
       font-weight: 700;
-      font-size: 5.4rem !important;
+      font-size: 5.2rem !important;
       line-height: 6rem !important;
       margin-top: 3rem;
     }
     p {
-      width: 70%;
+      width: 90%;
       color: hsl(257, 7%, 63%);
-      font-size: 1.7rem !important;
+      font-size: 1.4rem !important;
     }
     button {
       margin-top: 1.5rem;
