@@ -1,3 +1,4 @@
+import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
@@ -10,27 +11,40 @@ import { ApiService } from 'src/app/api.service';
 export class LinkSectionComponent {
   linkToShorten: string = '';
   linkData: any;
-  storedLinks : any;
-  storedLinksToShorten : any = [];
+  storedLinks: any = [];
+  storedLinksToShorten: any = [];
+
+  storedShortLinks = localStorage.getItem('storedLinks');
 
   linkForm = new FormGroup({
-    linkToShorten: new FormControl('', Validators.required)
+    linkToShorten: new FormControl('', Validators.required),
   });
 
-  checkLink(link: string){
-    let url = new URL(link)
+  onChange(event: any) {
+    let shortenLinkError = document.querySelector('.shorten');
+    let oldLinks = localStorage.getItem('storedLinksToShorten');
+
+    let textInput = String(event.target.value);
+
+    if (oldLinks == textInput) {
+      shortenLinkError?.classList.remove('hidden');
+      shortenLinkError?.classList.add('visible');
+    }
   }
-  getLink(){
-    return this.linkForm.get('linkToShorten');  
+  getLink() {
+    return this.linkForm.get('storedLinksToShorten');
   }
+
   shortenLink() {
     this.api.getShortLinks(this.linkToShorten).subscribe((data) => {
       this.linkData = Object.values(data);
-      localStorage.setItem('storedLinks', JSON.stringify(this.linkData))
 
-      this.storedLinksToShorten.push(this.linkToShorten)
-      localStorage.setItem('storedLinksToShorten', this.storedLinksToShorten)
-      return this.storedLinksToShorten
+      this.storedLinks = this.linkData[1];
+
+      localStorage.setItem('storedLinks', JSON.stringify(this.storedLinks));
+
+      this.storedLinksToShorten.push(this.linkToShorten);
+      localStorage.setItem('storedLinksToShorten', this.storedLinksToShorten);
     });
   }
 
