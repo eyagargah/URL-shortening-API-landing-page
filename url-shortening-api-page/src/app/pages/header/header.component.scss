@@ -113,7 +113,9 @@
             color: hsl(0, 0%, 75%);
             cursor: pointer;
           }
-
+          li:hover {
+            color: black;
+          }
           .signup {
             height: 4rem;
             width: 9rem;
