@@ -12,9 +12,10 @@
           class="form-control"
           [(ngModel)]="linkToShorten"
           value="linkToShorten"
+          (change)="onChange($event)"
         />
         <span class="error" *ngIf="!linkToShorten">Please add a link.</span>
-        <span class="error" *ngIf="storedLinksToShorten.includes(linkToShorten)">This link has already been shorted.</span>
+        <span class="error shorten hidden">This link has already been shorted.</span>
       </div>
 
       <button (click)="shortenLink()">Shorten it!</button>
