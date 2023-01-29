@@ -1,8 +1,8 @@
-import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
 
+import { browserRefresh } from '../../app.component';
 @Component({
   selector: 'app-link-section',
   templateUrl: './link-section.component.html',
@@ -14,22 +14,19 @@ export class LinkSectionComponent {
   storedLinks: any = [];
   storedLinksToShorten: any = [];
 
+  browserRefresh: boolean | undefined;
   storedShortLinks = localStorage.getItem('storedLinks');
-
+  storedLink = localStorage.getItem('storedLinksToShorten');
   linkForm = new FormGroup({
     linkToShorten: new FormControl('', Validators.required),
   });
 
   onChange(event: any) {
-    let shortenLinkError = document.querySelector('.shorten');
-    let oldLinks = localStorage.getItem('storedLinksToShorten');
-
     let textInput = String(event.target.value);
-
-    if (oldLinks == textInput) {
-      shortenLinkError?.classList.remove('hidden');
-      shortenLinkError?.classList.add('visible');
+    if(!new URL(textInput)){
+      
     }
+  
   }
   getLink() {
     return this.linkForm.get('storedLinksToShorten');
@@ -50,5 +47,13 @@ export class LinkSectionComponent {
 
   constructor(private api: ApiService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.browserRefresh = browserRefresh;
+    if (this.browserRefresh) {
+      let input = document.querySelector('#link-input');
+      input?.setAttribute('innerHTML', 'hello there');
+      console.log(input);
+    }
+    console.log('refreshed?:', browserRefresh);
+  }
 }
