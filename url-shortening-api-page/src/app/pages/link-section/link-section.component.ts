@@ -23,10 +23,6 @@ export class LinkSectionComponent {
 
   onChange(event: any) {
     let textInput = String(event.target.value);
-    if(!new URL(textInput)){
-      
-    }
-  
   }
   getLink() {
     return this.linkForm.get('storedLinksToShorten');
