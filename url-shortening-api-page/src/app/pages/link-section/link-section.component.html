@@ -11,7 +11,6 @@
           formControlName="linkToShorten"
           class="form-control"
           [(ngModel)]="linkToShorten"
-          (change)="onChange($event)"
           value="linkToShorten"
         />
         <span class="error" *ngIf="!linkToShorten">Please add a link.</span>
