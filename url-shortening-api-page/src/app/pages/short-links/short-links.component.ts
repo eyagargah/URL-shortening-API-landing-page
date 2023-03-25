@@ -7,20 +7,19 @@ import { Clipboard } from '@angular/cdk/clipboard';
   styleUrls: ['./short-links.component.scss'],
 })
 export class ShortLinksComponent {
-  @Input() linkData: any;
+  linkData : any = []
 
-  storedLinksKeys = Object.keys(
-    JSON.parse(localStorage.getItem('storedLinks') || '{}')
-  ); 
+  constructor(private clipboard: Clipboard) {}
+  ngOnInit() {
+ 
+    const keys = Object.keys(localStorage)
 
-  storedLinksValues = Object.values(
-    JSON.parse(localStorage.getItem('storedLinks') || '{}')
-  );
-
-  constructor(private clipboard: Clipboard) {
-
+    for(let key in keys){
+      this.linkData.push(localStorage.getItem(key))
+    }
+    console.log(localStorage.getItem())
+   
   }
-
   copyText(textToCopy: any) {
     this.clipboard.copy(textToCopy);
   }
