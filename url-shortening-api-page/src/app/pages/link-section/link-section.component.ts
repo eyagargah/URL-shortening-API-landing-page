@@ -11,12 +11,7 @@ import { browserRefresh } from '../../app.component';
 export class LinkSectionComponent {
   linkToShorten: string = '';
   linkData: any;
-  storedLinks: any = [];
-  storedLinksToShorten: any = [];
 
-  browserRefresh: boolean | undefined;
-  storedShortLinks = localStorage.getItem('storedLinks');
-  storedLink = localStorage.getItem('storedLinksToShorten');
   linkForm = new FormGroup({
     linkToShorten: new FormControl('', Validators.required),
   });
@@ -31,25 +26,16 @@ export class LinkSectionComponent {
   shortenLink() {
     this.api.getShortLinks(this.linkToShorten).subscribe((data) => {
       this.linkData = Object.values(data);
+      let storedLink = this.linkData[1].full_share_link
+      let storedLinksToShorten = this.linkToShorten ;
 
-      this.storedLinks = this.linkData[1];
-
-      localStorage.setItem('storedLinks', JSON.stringify(this.storedLinks));
-
-      this.storedLinksToShorten.push(this.linkToShorten);
-      localStorage.setItem('storedLinksToShorten', this.storedLinksToShorten);
+      localStorage.setItem(storedLink, storedLinksToShorten)
     });
   }
 
   constructor(private api: ApiService) {}
 
   ngOnInit() {
-    this.browserRefresh = browserRefresh;
-    if (this.browserRefresh) {
-      let input = document.querySelector('#link-input');
-      input?.setAttribute('innerHTML', 'hello there');
-      console.log(input);
-    }
-    console.log('refreshed?:', browserRefresh);
+    console.log(this.linkData)
   }
 }
