@@ -13,11 +13,12 @@ export class ShortLinksComponent {
   ngOnInit() {
  
     const keys = Object.keys(localStorage)
-
+    const values = Object.values(localStorage)
+    
     for(let key in keys){
-      this.linkData.push(localStorage.getItem(key))
+      this.linkData.push([keys[key] , localStorage.getItem(keys[key])])
     }
-    console.log(localStorage.getItem())
+    console.log(this.linkData)
    
   }
   copyText(textToCopy: any) {
