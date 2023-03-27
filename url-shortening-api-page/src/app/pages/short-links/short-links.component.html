@@ -1,11 +1,13 @@
 <div class="shortlinks">
   <div class="container">
     <div class="link-list">
-      <div class="link">
-        <h4></h4>
+      <div class="link" *ngFor="let link of linkData">
+        <h4>
+          {{link[0]}}
+        </h4>
         <hr />
         <div class="new-link">
-          <h4></h4>
+          <h4>{{link[2]}}</h4>
           <button id="copyBtn" (click)="copyLink($event)" class="not-active">
             Copy
           </button>
