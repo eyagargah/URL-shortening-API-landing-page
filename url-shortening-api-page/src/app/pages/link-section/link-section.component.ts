@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
 
-import { browserRefresh } from '../../app.component';
 @Component({
   selector: 'app-link-section',
   templateUrl: './link-section.component.html',
@@ -29,13 +28,13 @@ export class LinkSectionComponent {
       let storedLink = this.linkData[1].full_share_link
       let storedLinksToShorten = this.linkToShorten ;
 
-      localStorage.setItem(storedLink, storedLinksToShorten)
+      localStorage.setItem(storedLinksToShorten,storedLink)
     });
   }
 
   constructor(private api: ApiService) {}
 
   ngOnInit() {
-    console.log(this.linkData)
+   
   }
 }
