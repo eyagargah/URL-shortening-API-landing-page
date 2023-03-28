@@ -13,6 +13,18 @@
           </button>
         </div>
       </div>
+      <div class="link" *ngFor="let link of storedLinks">
+        <h4>
+          {{link[0]}}
+        </h4>
+        <hr />
+        <div class="new-link">
+          <h4>{{link[1]}}</h4>
+          <button id="copyBtn" (click)="copyLink($event)" class="not-active">
+            Copy
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
