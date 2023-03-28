@@ -9,10 +9,15 @@ import { Clipboard } from '@angular/cdk/clipboard';
 export class ShortLinksComponent {
   @Input() linkData : any = []
 
-  storedLinks : any
+  storedLinks : any = []
   constructor(private clipboard: Clipboard) {}
   ngOnInit() {
- 
+
+    const keys = Object.keys(localStorage)
+    for(let key in keys){
+      this.storedLinks.push([keys[key] , localStorage.getItem(keys[key])])
+    }
+    console.log(this.storedLinks)
   }
   copyText(textToCopy: any) {
     this.clipboard.copy(textToCopy);
