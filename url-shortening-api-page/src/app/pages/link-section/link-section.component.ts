@@ -25,6 +25,7 @@ export class LinkSectionComponent {
   shortenLink() {
     this.api.getShortLinks(this.linkToShorten).subscribe((data) => {
       this.linkData = Object.values(data);
+      console.log(this.linkData[1].original_link)
       let storedLink = this.linkData[1].full_share_link
       let storedLinksToShorten = this.linkToShorten ;
 
