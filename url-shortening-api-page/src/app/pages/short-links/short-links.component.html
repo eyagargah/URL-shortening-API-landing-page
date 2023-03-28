@@ -1,13 +1,13 @@
 <div class="shortlinks">
   <div class="container">
     <div class="link-list">
-      <div class="link" *ngFor="let link of linkData">
+      <div class="link" *ngIf="linkData.length>0">
         <h4>
-          {{link[0]}}
+          {{linkData[1].original_link}}
         </h4>
         <hr />
         <div class="new-link">
-          <h4>{{link[1]}}</h4>
+          <h4>{{linkData[1].full_short_link}}</h4>
           <button id="copyBtn" (click)="copyLink($event)" class="not-active">
             Copy
           </button>
