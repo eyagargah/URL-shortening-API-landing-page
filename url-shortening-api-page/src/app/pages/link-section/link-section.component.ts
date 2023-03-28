@@ -35,6 +35,5 @@ export class LinkSectionComponent {
   constructor(private api: ApiService) {}
 
   ngOnInit() {
-   
   }
 }
