@@ -18,37 +18,44 @@
 
       <button (click)="shortenLink()">Shorten it!</button>
     </form>
-    
-    <!--<app-short-links [linkData]="linkData"></app-short-links>-->
-  </div>
-</div>
-<div class="shortlinks">
-  <div class="container">
-    <div class="link-list">
-      <div class="link" *ngIf="linkData.length > 0">
-        <h4>
-          {{ linkData[1].original_link }}
-        </h4>
-        <hr />
-        <div class="new-link">
-          <h4>{{ linkData[1].full_short_link }}</h4>
-          <button id="copyBtn" (click)="copyLink($event)" class="not-active">
-            Copy
-          </button>
-        </div>
-      </div>
-      <div class="link" *ngFor="let link of storedLinks">
-        <h4>
-          {{ link[0] }}
-        </h4>
-        <hr />
-        <div class="new-link">
-          <h4>{{ link[1] }}</h4>
-          <button id="copyBtn" (click)="copyLink($event)" class="not-active">
-            Copy
-          </button>
+    <div class="shortlinks">
+      <div class="container">
+        <div class="link-list">
+          <div class="link" *ngIf="linkData.length > 0">
+            <h4>
+              {{ linkData[1].original_link }}
+            </h4>
+            <hr />
+            <div class="new-link">
+              <h4>{{ linkData[1].full_short_link }}</h4>
+              <button
+                id="copyBtn"
+                (click)="copyLink($event)"
+                class="not-active"
+              >
+                Copy
+              </button>
+            </div>
+          </div>
+          <div class="link" *ngFor="let link of storedLinks">
+            <h4>
+              {{ link[0] }}
+            </h4>
+            <hr />
+            <div class="new-link">
+              <h4>{{ link[1] }}</h4>
+              <button
+                id="copyBtn"
+                (click)="copyLink($event)"
+                class="not-active"
+              >
+                Copy
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    <!--<app-short-links [linkData]="linkData"></app-short-links>-->
   </div>
 </div>
