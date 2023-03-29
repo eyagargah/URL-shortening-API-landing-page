@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
+import { Clipboard } from '@angular/cdk/clipboard';
 
 @Component({
   selector: 'app-link-section',
@@ -10,6 +11,8 @@ import { ApiService } from 'src/app/api.service';
 export class LinkSectionComponent {
   linkToShorten: string = '';
   linkData: any;
+
+  storedLinks : any = []
 
   linkForm = new FormGroup({
     linkToShorten: new FormControl('', Validators.required),
@@ -32,8 +35,35 @@ export class LinkSectionComponent {
     });
   }
 
-  constructor(private api: ApiService) {}
+  copyText(textToCopy: any) {
+    this.clipboard.copy(textToCopy);
+  }
+
+  copyLink(event: Event) {
+    let elementId = event.target as HTMLElement;
+    console.log(elementId.parentElement?.firstChild?.textContent);
+    let textContent = elementId.parentElement?.firstChild?.textContent;
+    this.copyText(textContent);
+    if (elementId.classList.contains('not-active')) {
+      elementId.classList.remove('not-active');
+      elementId.classList.add('active');
+      elementId.innerText = 'Copied!';
+    } else {
+      elementId.classList.add('not-active');
+      elementId.classList.remove('active');
+      elementId.innerText = 'Copy';
+    }}
+
+  constructor(private api: ApiService, private clipboard: Clipboard ) {
+    const keys = Object.keys(localStorage)
+    for(let key in keys){
+      this.storedLinks.push([keys[key] , localStorage.getItem(keys[key])])
+    }
+    console.log(this.storedLinks[0][0])
+
+  }
 
   ngOnInit() {
+    console.log(this.storedLinks)
   }
 }
