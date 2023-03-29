@@ -13,6 +13,7 @@ export class LinkSectionComponent {
   linkData: any;
 
   @Input() storedLinks : any = []
+  
   linkForm = new FormGroup({
     linkToShorten: new FormControl('', Validators.required),
   });
