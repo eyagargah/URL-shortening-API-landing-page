@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
 import { Clipboard } from '@angular/cdk/clipboard';
@@ -12,8 +12,7 @@ export class LinkSectionComponent {
   linkToShorten: string = '';
   linkData: any;
 
-  storedLinks : any = []
-
+  @Input() storedLinks : any = []
   linkForm = new FormGroup({
     linkToShorten: new FormControl('', Validators.required),
   });
@@ -55,15 +54,6 @@ export class LinkSectionComponent {
     }}
 
   constructor(private api: ApiService, private clipboard: Clipboard ) {
-    const keys = Object.keys(localStorage)
-    for(let key in keys){
-      this.storedLinks.push([keys[key] , localStorage.getItem(keys[key])])
-    }
-    console.log(this.storedLinks[0][0])
-
-  }
-
-  ngOnInit() {
-    console.log(this.storedLinks)
+  
   }
 }
