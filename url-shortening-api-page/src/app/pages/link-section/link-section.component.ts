@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
-import { Clipboard } from '@angular/cdk/clipboard';
 
 @Component({
   selector: 'app-link-section',
@@ -12,8 +11,7 @@ export class LinkSectionComponent {
   linkToShorten: string = '';
   linkData: any;
 
-  @Input() storedLinks : any = []
-  
+  storedLinks : any = []
   linkForm = new FormGroup({
     linkToShorten: new FormControl('', Validators.required),
   });
@@ -28,33 +26,22 @@ export class LinkSectionComponent {
   shortenLink() {
     this.api.getShortLinks(this.linkToShorten).subscribe((data) => {
       this.linkData = Object.values(data);
+      
       let storedLink = this.linkData[1].full_share_link
       let storedLinksToShorten = this.linkToShorten ;
 
+      this.storedLinks.push(storedLinksToShorten , storedLink)
+      console.log(storedLink)
+      console.log(storedLinksToShorten)
       localStorage.setItem(storedLinksToShorten,storedLink)
+      
     });
   }
 
-  copyText(textToCopy: any) {
-    this.clipboard.copy(textToCopy);
-  }
-
-  copyLink(event: Event) {
-    let elementId = event.target as HTMLElement;
-    console.log(elementId.parentElement?.firstChild?.textContent);
-    let textContent = elementId.parentElement?.firstChild?.textContent;
-    this.copyText(textContent);
-    if (elementId.classList.contains('not-active')) {
-      elementId.classList.remove('not-active');
-      elementId.classList.add('active');
-      elementId.innerText = 'Copied!';
-    } else {
-      elementId.classList.add('not-active');
-      elementId.classList.remove('active');
-      elementId.innerText = 'Copy';
-    }}
-
-  constructor(private api: ApiService, private clipboard: Clipboard ) {
-  
+  constructor(private api: ApiService) {
+    const keys = Object.keys(localStorage)
+    for(let key in keys){
+      this.storedLinks.push([keys[key] , localStorage.getItem(keys[key])])
+    }
   }
 }
