@@ -7,9 +7,8 @@ import { Clipboard } from '@angular/cdk/clipboard';
   styleUrls: ['./short-links.component.scss'],
 })
 export class ShortLinksComponent {
-  @Input() linkData: any = [];
 
-  @Input() storedLinks: any;
+  links : any
 
   constructor(private clipboard: Clipboard) {}
   copyText(textToCopy: any) {
@@ -17,7 +16,8 @@ export class ShortLinksComponent {
   }
 
   ngOnInit(){
-    console.log(this.storedLinks)
+    this.links =  JSON.parse(localStorage.getItem('links') ?? '{}')
+    console.log(this.links)
   }
   copyLink(event: Event) {
     let elementId = event.target as HTMLElement;
