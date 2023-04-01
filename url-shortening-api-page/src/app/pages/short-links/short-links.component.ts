@@ -15,10 +15,6 @@ export class ShortLinksComponent {
     this.clipboard.copy(textToCopy);
   }
 
-  ngOnInit(){
-    //this.links =  JSON.parse(localStorage.getItem('links') ?? '{}')
-  
-  }
   copyLink(event: Event) {
     let elementId = event.target as HTMLElement;
     console.log(elementId.parentElement?.firstChild?.textContent);
