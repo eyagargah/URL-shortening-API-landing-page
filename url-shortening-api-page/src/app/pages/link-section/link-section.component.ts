@@ -11,7 +11,7 @@ export class LinkSectionComponent {
   linkToShorten: string = '';
   linkData: any;
 
-  storedLinks : any = []
+  links : any = []
   linkForm = new FormGroup({
     linkToShorten: new FormControl('', Validators.required),
   });
@@ -26,22 +26,21 @@ export class LinkSectionComponent {
   shortenLink() {
     this.api.getShortLinks(this.linkToShorten).subscribe((data) => {
       this.linkData = Object.values(data);
-      
-      let storedLink = this.linkData[1].full_share_link
-      let storedLinksToShorten = this.linkToShorten ;
 
-      this.storedLinks.push(storedLinksToShorten , storedLink)
-      console.log(storedLink)
-      console.log(storedLinksToShorten)
-      localStorage.setItem(storedLinksToShorten,storedLink)
-      
+      this.links.push(this.linkData[1]);
+      console.log(this.links)
+      localStorage.setItem('links', JSON.stringify(this.links));
+
+      //let storedLink = this.linkData[1].full_share_link
+      //let storedLinksToShorten = this.linkToShorten ;
     });
   }
 
+  ngOnInit(){
+    console.log(this.links)
+  }
   constructor(private api: ApiService) {
-    const keys = Object.keys(localStorage)
-    for(let key in keys){
-      this.storedLinks.push([keys[key] , localStorage.getItem(keys[key])])
-    }
+    this.links.push(JSON.parse(localStorage.getItem('links') ?? '{}'))
+
   }
 }
