@@ -1,6 +1,7 @@
 {
   "name": "url-shortening-api-page",
   "version": "0.0.0",
+  "homepage": "https://eyagargah.github.io/URL-shortening-API-landing-page/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
