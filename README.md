@@ -48,7 +48,7 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [Abgular](https://reactjs.org/) - JS framework
+- [Angular](https://reactjs.org/) - JS framework
 
 
 ### What I learned
