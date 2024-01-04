@@ -1,14 +1,15 @@
 import { Injectable, Input } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
-  getShortLinks(link: string) {
-    let baseUrl = 'https://api.shrtco.de/v2/shorten?url=';
+  private apiUrl = 'https://cleanuri.com/api/v1/shorten';
 
-    return this.http.get(baseUrl + link);
+  getShortLinks(link: string) {
+    const data = { url: link };
+    return this.http.post(this.apiUrl, data);
   }
 
   constructor(private http: HttpClient) {}
