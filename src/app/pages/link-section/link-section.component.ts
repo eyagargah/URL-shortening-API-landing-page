@@ -41,7 +41,6 @@ export class LinkSectionComponent {
 
   ngOnInit() {
     this.links = JSON.parse(localStorage.getItem('links') ?? '');
-    console.log(this.links);
   }
   constructor(private api: ApiService) {}
 }
