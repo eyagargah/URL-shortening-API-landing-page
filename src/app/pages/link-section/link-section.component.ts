@@ -24,9 +24,9 @@ export class LinkSectionComponent {
   }
 
   shortenLink() {
-    this.api.getShortLinks(this.linkToShorten).subscribe((data) => {
-      this.linkData = Object.values(data);
-
+    this.api.getShortLinks(this.linkToShorten).then((data) => {
+      //this.linkData = Object.values(data);
+      console.log(data)
       //get stored data
       this.links = JSON.parse(localStorage.getItem('links') ?? '[]')
 
