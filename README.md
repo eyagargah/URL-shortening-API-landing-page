@@ -17,7 +17,9 @@ This is a solution to the [Shortly URL shortening API Challenge challenge on Fro
 - [Acknowledgments](#acknowledgments)
 
 ## Overview
-A landing page that integrates with the shrtcode API to mainly shorten URLs
+
+A landing page that integrates with the ShortUrl API to mainly shorten URLs [https://rapidapi.com/Walter678/api/shorturl9/]
+
 ### The challenge
 
 Users should be able to:
@@ -32,7 +34,6 @@ Users should be able to:
 ### Screenshot
 
 ![](./screenshot.jpg)
-
 
 ### Links
 
@@ -50,7 +51,6 @@ Users should be able to:
 - Mobile-first workflow
 - [Angular](https://reactjs.org/) - JS framework
 
-
 ### What I learned
 
 Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
@@ -60,21 +60,22 @@ To see how you can add code snippets, see below:
 ```html
 <h1>Some HTML code I'm proud of</h1>
 ```
+
 ```css
 .proud-of-this-css {
   color: papayawhip;
 }
 ```
+
 ```js
 const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+  console.log("🎉");
+};
 ```
 
 ### Continued development
 
 Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
 
 ### Useful resources
 
