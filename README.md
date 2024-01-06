@@ -1,6 +1,6 @@
-# Frontend Mentor - Shortly URL shortening API Challenge solution
+# Frontend Mentor - ShortURL URL shortening API Challenge solution
 
-This is a solution to the [Shortly URL shortening API Challenge challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G).
+This is a solution to the [ShortURL URL shortening API Challenge challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G).
 
 ## Table of contents
 
@@ -64,7 +64,7 @@ To see how you can add code snippets, see below:
 ```css
 .proud-of-this-css {
   color: papayawhip;
-}
+} 
 ```
 
 ```js
