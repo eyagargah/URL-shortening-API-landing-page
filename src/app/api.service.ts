@@ -23,8 +23,8 @@ export class ApiService {
 
     try {
       const response = await axios.request(options);
-      console.log(response.data);
-      return response
+      console.log(response.data.url);
+      return response.data
     } catch (error) {
       console.error(error);
     }
