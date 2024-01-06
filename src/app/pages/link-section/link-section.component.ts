@@ -26,20 +26,25 @@ export class LinkSectionComponent {
   }
 
   shortenLink() {
-    this.api.getShortLinks(this.linkToShorten).then((data) => {
-      this.linkData.short_link = data
-      this.linkData.original_link = this.linkToShorten
-      console.log(this.linkData)
-      //get stored data
-      this.links = JSON.parse(localStorage.getItem('links') ?? '[]')
-
-     
-      this.links.push(this.linkData)
-
-      localStorage.setItem('links', JSON.stringify(this.links))
-      //let storedLink = this.linkData[1].full_share_link
-      //let storedLinksToShorten = this.linkToShorten ;
-    });
+    if(this.linkToShorten==""){
+      alert("Please enter a valid URL");
+    }else {
+      this.api.getShortLinks(this.linkToShorten).then((data) => {
+        this.linkData.short_link = data
+        this.linkData.original_link = this.linkToShorten
+        console.log(this.linkData)
+        //get stored data
+        this.links = JSON.parse(localStorage.getItem('links') ?? '[]')
+  
+       
+        this.links.push(this.linkData)
+  
+        localStorage.setItem('links', JSON.stringify(this.links))
+        //let storedLink = this.linkData[1].full_share_link
+        //let storedLinksToShorten = this.linkToShorten ;
+      });
+    }
+   
   }
 
   ngOnInit() {
