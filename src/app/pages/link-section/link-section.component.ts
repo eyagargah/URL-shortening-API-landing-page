@@ -9,8 +9,10 @@ import { ApiService } from 'src/app/api.service';
 })
 export class LinkSectionComponent {
   linkToShorten: string = '';
-  linkData: any;
-
+  linkData: { original_link: string, short_link: string } = {
+    original_link: '',
+    short_link: ''
+  }
   links: any = [] ;
   linkForm = new FormGroup({
     linkToShorten: new FormControl('', Validators.required),
@@ -25,13 +27,14 @@ export class LinkSectionComponent {
 
   shortenLink() {
     this.api.getShortLinks(this.linkToShorten).then((data) => {
-      //this.linkData = Object.values(data);
-      console.log(data)
+      this.linkData.short_link = data
+      this.linkData.original_link = this.linkToShorten
+      console.log(this.linkData)
       //get stored data
       this.links = JSON.parse(localStorage.getItem('links') ?? '[]')
 
      
-      this.links.push(this.linkData[1])
+      this.links.push(this.linkData)
 
       localStorage.setItem('links', JSON.stringify(this.links))
       //let storedLink = this.linkData[1].full_share_link
