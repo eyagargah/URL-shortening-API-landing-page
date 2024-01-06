@@ -5,7 +5,6 @@ import axios from 'axios';
   providedIn: 'root',
 })
 export class ApiService {
-
   async getShortLinks(link: string) {
     const encodedParams = new URLSearchParams();
     encodedParams.set('url', link);
@@ -23,12 +22,9 @@ export class ApiService {
 
     try {
       const response = await axios.request(options);
-      console.log(response.data.url);
-      return response.data.url
+      return response.data.url;
     } catch (error) {
       console.error(error);
     }
   }
-
-  constructor(private http: HttpClient) {}
 }
