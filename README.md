@@ -1,11 +1,9 @@
 #ShortURL URL shortening API
 
-This is a solution to the [ShortURL URL shortening API Challenge challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G).
-
 ## Table of contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
+  - [The project](#the-project)
   - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
@@ -17,8 +15,11 @@ This is a solution to the [ShortURL URL shortening API Challenge challenge on Fr
 - [Acknowledgments](#acknowledgments)
 
 ## Overview
-
 A landing page that integrates with the ShortUrl API to mainly shorten URLs [https://rapidapi.com/Walter678/api/shorturl9/]
+
+### The project
+This project provides a web interface for a URL shortening API, allowing users to input a long URL and receive a shortened version that can be used for sharing links. The landing page is designed to be user-friendly and intuitive, making it easy for users to quickly generate shortened URLs.
+
 
 ### The challenge
 
