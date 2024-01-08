@@ -52,4 +52,5 @@ Users should be able to:
 ### Useful resources
 
 - [Example resource 1](https://zeroesandones.medium.com/how-to-copy-text-to-clipboard-in-angular-e99c0feda501) - This helped me to copy selected short link to clipboard and paste it. I really liked this pattern and will use it going forward.
+- [Example resource 2](https://www.syncfusion.com/blogs/post/host-angular-app-in-github-pages.aspx) - This helped me to host my project in github pages.
 
