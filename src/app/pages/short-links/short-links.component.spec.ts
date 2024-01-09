@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ShortLinksComponent } from './short-links.component';
+import { LinkSectionComponent } from '../link-section/link-section.component';
 
 describe('ShortLinksComponent', () => {
   let component: ShortLinksComponent;
@@ -8,7 +9,7 @@ describe('ShortLinksComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ShortLinksComponent ]
+      declarations: [ ShortLinksComponent , LinkSectionComponent ]
     })
     .compileComponents();
 
