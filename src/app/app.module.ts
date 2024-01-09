@@ -35,7 +35,7 @@ import { ShortLinksComponent } from './pages/short-links/short-links.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  exports: [HeaderComponent],
+  exports: [HeaderComponent, ShortLinksComponent,],
   providers: [],
   bootstrap: [AppComponent]
 })
