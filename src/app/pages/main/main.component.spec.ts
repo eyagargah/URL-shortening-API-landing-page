@@ -8,6 +8,7 @@ import { StatsComponent } from '../stats/stats.component';
 import { BenefitSectionComponent } from '../benefit-section/benefit-section.component';
 import { LinkBoostComponent } from '../link-boost/link-boost.component';
 import { FooterComponent } from '../footer/footer.component';
+import { ShortLinksComponent } from '../short-links/short-links.component';
 
 describe('MainComponent', () => {
   let component: MainComponent;
@@ -15,7 +16,7 @@ describe('MainComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MainComponent , HeaderComponent , ServiceDescriptionComponent, LinkSectionComponent, StatsComponent, BenefitSectionComponent , LinkBoostComponent, FooterComponent ]
+      declarations: [ MainComponent , ShortLinksComponent, HeaderComponent , ServiceDescriptionComponent, LinkSectionComponent, StatsComponent, BenefitSectionComponent , LinkBoostComponent, FooterComponent ]
     })
     .compileComponents();
 
