@@ -42,6 +42,7 @@
         color: hsl(180, 66%, 49%);
       }
       .social-links {
+        cursor: pointer;
         display: flex;
         justify-content: center;
         gap:2rem;
@@ -49,6 +50,10 @@
 
         .link img {
           width: 2rem;
+        }
+       
+        .link svg:hover {
+          fill: hsl(180, 66%, 49%);
         }
         .link:hover {
           cursor: pointer;
