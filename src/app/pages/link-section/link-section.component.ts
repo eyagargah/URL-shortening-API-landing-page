@@ -49,9 +49,12 @@ export class LinkSectionComponent {
   }
 
   ngOnInit() {
-    this.links = JSON.parse(localStorage.getItem('links') ?? '');
+    //this.links = JSON.parse(localStorage.getItem('links') ?? '');
     this.linksArray.push(localStorage.getItem('links'))
-    console.log(this.linksArray)
+    this.linksArray[0].forEach((link: any) => {
+      this.links.push(link)
+    });
+    console.log(this.links)
   }
   constructor(private api: ApiService) {}
 }
