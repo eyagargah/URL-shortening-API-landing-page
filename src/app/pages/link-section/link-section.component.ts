@@ -9,6 +9,7 @@ import { ApiService } from 'src/app/api.service';
 })
 export class LinkSectionComponent {
   linkToShorten: string = '';
+  linksArray : any = []
   linkData: { original_link: string, short_link: string } = {
     original_link: '',
     short_link: ''
@@ -49,6 +50,8 @@ export class LinkSectionComponent {
 
   ngOnInit() {
     this.links = JSON.parse(localStorage.getItem('links') ?? '');
+    this.linksArray.push(localStorage.getItem('links'))
+    console.log(this.linksArray)
   }
   constructor(private api: ApiService) {}
 }
