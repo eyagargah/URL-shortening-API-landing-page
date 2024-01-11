@@ -10,7 +10,10 @@ export class ShortLinksComponent {
 
   @Input() links : any
 
-  constructor(private clipboard: Clipboard) {}
+  constructor(private clipboard: Clipboard) {}*
+  ngOnInit(){
+    console.table(this.links)
+  }
   copyText(textToCopy: any) {
     this.clipboard.copy(textToCopy);
   }
