@@ -35,7 +35,7 @@ export class LinkSectionComponent {
         this.linkData.original_link = this.linkToShorten
         console.log(this.linkData)
         //get stored data
-        this.links = JSON.parse(localStorage.getItem('links') ?? '[]')
+        this.getShortenedLinks()
   
        
         this.links.push(this.linkData)
@@ -48,7 +48,7 @@ export class LinkSectionComponent {
    
   }
 
-  ngOnInit() {
+  getShortenedLinks(){
     this.linksData = localStorage.getItem('links') || ''
     if(this.linkData){
       //remove [] from linksData
@@ -66,9 +66,9 @@ export class LinkSectionComponent {
         return eval('(' + objString + ')');
       });
     }
-  
-    
-    // Use the array of objects
+  }
+  ngOnInit() {
+    this.getShortenedLinks()
   }
   constructor(private api: ApiService) {}
 }
