@@ -51,13 +51,13 @@ export class LinkSectionComponent {
   ngOnInit() {
     this.linksData = localStorage.getItem('links') || ''
     if(this.linkData){
+      //remove [] from linksData
       var trimmedString = this.linksData.slice(1, -1);
-
       // Split the string into individual object strings
       var objectStrings = trimmedString.split('},');
-      
+      console.log(objectStrings)
       // Create an array of objects
-      var links = objectStrings.map(function(objString: string) {
+      this.links = objectStrings.map(function(objString: string) {
         // Add back the closing curly brace if it's not the last object
         if (objString.charAt(objString.length - 1) !== '}') {
           objString += '}';
@@ -69,7 +69,6 @@ export class LinkSectionComponent {
   
     
     // Use the array of objects
-  console.log(links)
   }
   constructor(private api: ApiService) {}
 }
