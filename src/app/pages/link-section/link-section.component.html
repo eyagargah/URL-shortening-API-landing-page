@@ -10,7 +10,7 @@
           required
           formControlName="linkToShorten"
           class="form-control"
-          [(ngModel)]="linkToShorten"
+          [ngClass]="{'is-success' : linkForm.get('linkToShorten')!.valid}"
           value="linkToShorten"
         />
         <span class="error" [hidden]="linkForm.get('linkToShorten')!.valid">Please add a link.</span>
