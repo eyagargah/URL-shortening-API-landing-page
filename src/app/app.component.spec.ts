@@ -4,18 +4,24 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './pages/header/header.component';
 import { ShortLinksComponent } from './pages/short-links/short-links.component';
 import { MainComponent } from './pages/main/main.component';
-
+import { FormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms';
+import { LinkSectionComponent } from './pages/link-section/link-section.component';
+ 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        ReactiveFormsModule,
+        FormsModule 
       ],
       declarations: [
         AppComponent,
         HeaderComponent,
         ShortLinksComponent,
-        MainComponent
+        MainComponent,
+        LinkSectionComponent
       ],
     }).compileComponents();
   });
