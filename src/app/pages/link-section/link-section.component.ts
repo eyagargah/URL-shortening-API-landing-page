@@ -25,7 +25,7 @@ export class LinkSectionComponent {
   ngOnInit() {
     this.getShortenedLinks();
     this.form = this.fb.group({
-      
+      linkToShorten: ['' , Validators.required],
     })
   }
   constructor(private api: ApiService , private fb:FormBuilder) {}
