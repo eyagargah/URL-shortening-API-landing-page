@@ -10,28 +10,26 @@ import { ApiService } from 'src/app/api.service';
 })
 export class LinkSectionComponent {
   linkToShorten: string = '';
-  form !: FormGroup;
+  linkForm !: FormGroup;
   linksData: any;
   linkData: { original_link: string; short_link: string } = {
     original_link: '',
     short_link: '',
   };
   links: any = [];
-  linkForm = new FormGroup({
-    linkToShorten: new FormControl('', Validators.required),
-  });
+  
  
  
   ngOnInit() {
     this.getShortenedLinks();
-    this.form = this.fb.group({
-      link: ['' , Validators.required],
+    this.linkForm = this.fb.group({
+      linkToShorten: ['' , Validators.required],
     })
   }
   constructor(private api: ApiService , private fb:FormBuilder) {}
 
-  onChange(event: any) {
-    let textInput = String(event.target.value);
+  onChange() {
+    console.log(this.linkForm.value)
   }
   getLink() {
     return this.linkForm.get('storedLinksToShorten');
