@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-link-section',
   templateUrl: './link-section.component.html',
@@ -17,9 +17,7 @@ export class LinkSectionComponent {
     short_link: '',
   };
   links: any = [];
-  
- 
- 
+
   ngOnInit() {
     this.getShortenedLinks();
     this.linkForm = this.fb.group({
@@ -28,15 +26,13 @@ export class LinkSectionComponent {
   }
   constructor(private api: ApiService , private fb:FormBuilder) {}
 
-  onChange() {
-    console.log(this.linkForm.value)
-  }
+ 
   getLink() {
     return this.linkForm.get('storedLinksToShorten');
   }
 
   shortenLink() {
-    console.log(this.linkForm.value)
+    this.linkToShorten = this.linkForm.value.linkToShorten
     if (this.linkToShorten == '') {
       alert('Please enter a valid URL');
     } else {
@@ -52,6 +48,7 @@ export class LinkSectionComponent {
         //let storedLinksToShorten = this.linkToShorten ;
       });
     }
+    this.resetForm()
   }
 
   getShortenedLinks() {
@@ -72,5 +69,9 @@ export class LinkSectionComponent {
         return eval('(' + objString + ')');
       });
     }
+  }
+
+  resetForm(){
+    this.linkForm.reset();
   }
 }
