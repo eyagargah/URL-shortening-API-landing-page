@@ -18,6 +18,9 @@
       </div>
       <button (click)="shortenLink()">Shorten it!</button>
     </form>
+    <form [formGroup]="form">
+      <input formControlName="link" type="text">
+    </form>
     <app-short-links [links]="links"></app-short-links>
   </div>
 </div>
