@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
-import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-link-section',
@@ -11,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 })
 export class LinkSectionComponent {
   linkToShorten: string = '';
+  form !: FormGroup;
   linksData: any;
   linkData: { original_link: string; short_link: string } = {
     original_link: '',
@@ -20,7 +20,8 @@ export class LinkSectionComponent {
   linkForm = new FormGroup({
     linkToShorten: new FormControl('', Validators.required),
   });
-
+ 
+  
   ngOnInit() {
     this.getShortenedLinks();
   }
@@ -34,6 +35,7 @@ export class LinkSectionComponent {
   }
 
   shortenLink() {
+    console.log(this.linkForm.value)
     if (this.linkToShorten == '') {
       alert('Please enter a valid URL');
     } else {
