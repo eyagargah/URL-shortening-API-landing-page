@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
 
 @Component({
@@ -21,11 +21,14 @@ export class LinkSectionComponent {
     linkToShorten: new FormControl('', Validators.required),
   });
  
-  
+ 
   ngOnInit() {
     this.getShortenedLinks();
+    this.form = this.fb.group({
+      
+    })
   }
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService , private fb:FormBuilder) {}
 
   onChange(event: any) {
     let textInput = String(event.target.value);
