@@ -1,11 +1,13 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
+
 
 @Component({
   selector: 'app-link-section',
   templateUrl: './link-section.component.html',
   styleUrls: ['./link-section.component.scss'],
+  
 })
 export class LinkSectionComponent {
   linkToShorten: string = '';
@@ -18,6 +20,11 @@ export class LinkSectionComponent {
   linkForm = new FormGroup({
     linkToShorten: new FormControl('', Validators.required),
   });
+
+  ngOnInit() {
+    this.getShortenedLinks();
+  }
+  constructor(private api: ApiService) {}
 
   onChange(event: any) {
     let textInput = String(event.target.value);
@@ -63,8 +70,4 @@ export class LinkSectionComponent {
       });
     }
   }
-  ngOnInit() {
-    this.getShortenedLinks();
-  }
-  constructor(private api: ApiService) {}
 }
