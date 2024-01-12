@@ -13,13 +13,10 @@
           [(ngModel)]="linkToShorten"
           value="linkToShorten"
         />
-        <span class="error" *ngIf="!linkToShorten">Please add a link.</span>
+        <span class="error" [hidden]="linkForm.get('linkToShorten')!.valid">Please add a link.</span>
 
       </div>
       <button (click)="shortenLink()">Shorten it!</button>
-    </form>
-    <form [formGroup]="form">
-      <input formControlName="link" type="text">
     </form>
     <app-short-links [links]="links"></app-short-links>
   </div>
