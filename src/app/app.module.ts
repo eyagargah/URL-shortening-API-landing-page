@@ -1,7 +1,7 @@
 import { NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import {  ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './pages/header/header.component';
@@ -13,8 +13,7 @@ import { BenefitSectionComponent } from './pages/benefit-section/benefit-section
 import { LinkBoostComponent } from './pages/link-boost/link-boost.component';
 import { ServiceDescriptionComponent } from './pages/service-description/service-description.component';
 import { ShortLinksComponent } from './pages/short-links/short-links.component';
-import { FormsModule } from '@angular/forms'
- 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,11 +32,10 @@ import { FormsModule } from '@angular/forms'
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
   ],
-  exports: [HeaderComponent, ShortLinksComponent,],
-  providers: [ReactiveFormsModule],
+  exports: [HeaderComponent, ShortLinksComponent],
+  providers: [],
   bootstrap: [AppComponent],
-  schemas: [NO_ERRORS_SCHEMA]
+  schemas: [NO_ERRORS_SCHEMA],
 })
-export class AppModule { }
+export class AppModule {}
