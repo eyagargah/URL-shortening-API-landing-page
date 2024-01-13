@@ -13,4 +13,12 @@ describe('ApiService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('should return short link', async ()=> {
+    const url = 'https://www.google.com';
+    const api = new ApiService()
+    const result = await api.getShortLinks(url)
+    const expectedResult = 'https://shorturl.ac/7arzr'
+    expect(result).toBe(expectedResult)
+  })
 });
