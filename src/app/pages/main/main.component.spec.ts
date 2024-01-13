@@ -9,7 +9,7 @@ import { BenefitSectionComponent } from '../benefit-section/benefit-section.comp
 import { LinkBoostComponent } from '../link-boost/link-boost.component';
 import { FooterComponent } from '../footer/footer.component';
 import { ShortLinksComponent } from '../short-links/short-links.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 describe('MainComponent', () => {
   let component: MainComponent;
   let fixture: ComponentFixture<MainComponent>;
@@ -17,6 +17,7 @@ describe('MainComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ MainComponent , ShortLinksComponent, HeaderComponent , ServiceDescriptionComponent, LinkSectionComponent, StatsComponent, BenefitSectionComponent , LinkBoostComponent, FooterComponent ]
+    ,imports: [ReactiveFormsModule]
     })
     .compileComponents();
 
