@@ -68,6 +68,8 @@ To run the unit tests locally, follow these steps:
 
 1. Install Jasmine using npm:
 
+npm install jasmine --save-dev
+
 
 2. Configure the test environment and setup any necessary dependencies.
 
