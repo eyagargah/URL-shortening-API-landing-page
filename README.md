@@ -80,3 +80,22 @@ Our unit tests are organized into separate spec files and cover critical functio
 ### Running Tests
 
 To run the unit tests, execute the following command:
+
+
+
+This will trigger the Jasmine test runner and display the test results in the console.
+
+### Coverage Reports
+
+We also generate test coverage reports using Jasmine's built-in coverage tools. These reports provide insights into the percentage of code covered by our unit tests, helping us assess the overall quality of our test suite.
+
+### Sample Code
+
+Here's an example of a simple Jasmine test case:
+
+```javascript
+describe('Calculator', () => {
+  it('should add two numbers', () => {
+    expect(Calculator.add(2, 3)).toBe(5);
+  });
+});
