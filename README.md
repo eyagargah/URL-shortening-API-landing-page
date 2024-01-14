@@ -94,8 +94,10 @@ We also generate test coverage reports using Jasmine's built-in coverage tools. 
 Here's an example of a simple Jasmine test case:
 
 ```javascript
-describe('Calculator', () => {
-  it('should add two numbers', () => {
-    expect(Calculator.add(2, 3)).toBe(5);
-  });
-});
+ it('should return short link', async ()=> {
+    const url = 'https://www.google.com';
+    const api = new ApiService()
+    const result = await api.getShortLinks(url)
+    const expectedResult = 'https://shorturl.ac/7arzr'
+    expect(result).toBe(expectedResult)
+  }) 
