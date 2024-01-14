@@ -81,7 +81,7 @@ Our unit tests are organized into separate spec files and cover critical functio
 
 To run the unit tests, execute the following command:
 
-
+npm test
 
 This will trigger the Jasmine test runner and display the test results in the console.
 
