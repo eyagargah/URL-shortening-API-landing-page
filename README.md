@@ -57,9 +57,9 @@ The live site URL for the landing page is [https://eyagargah.github.io/URL-short
 - [Example resource 1](https://zeroesandones.medium.com/how-to-copy-text-to-clipboard-in-angular-e99c0feda501) - This helped me to copy selected short link to clipboard and paste it. I really liked this pattern and will use it going forward.
 - [Example resource 2](https://www.syncfusion.com/blogs/post/host-angular-app-in-github-pages.aspx) - This helped me to host my project in github pages.
 
-## Unit Tests
+#### Unit Tests
 
-This project includes a comprehensive suite of unit tests written using the Jasmine testing framework to ensure the reliability and functionality of the codebase.
+The project includes a comprehensive suite of unit tests written using the Jasmine testing framework. These tests cover critical functionality within the application and ensure the reliability and functionality of the codebase. The unit testing framework, setup, and configuration are designed to provide thorough validation of the code, ensuring a robust and dependable platform.
 
 ### Testing Framework
 
@@ -105,9 +105,6 @@ Here's an example of a simple Jasmine test case:
     expect(result).toBe(expectedResult)
   }) 
 
-
-///improvements
-
 ### Project Overview
 
 The ShortURL API Landing Page project aims to provide users with a seamless and intuitive platform for generating shortened URLs. By integrating with the ShortURL API, the project addresses the need for quick and efficient URL shortening while offering a user-friendly interface.
@@ -129,9 +126,5 @@ The landing page seamlessly integrates with the ShortURL API, leveraging its end
 In the event of an error, the landing page provides clear and concise error messages to users. For instance, when the form is submitted with an empty input field, users will receive an immediate error message prompting them to enter a valid URL. This proactive error handling ensures a smooth user experience and reduces potential frustration.
 
 
-
-#### Unit Tests
-
-The project includes a comprehensive suite of unit tests written using the Jasmine testing framework. These tests cover critical functionality within the application and ensure the reliability and functionality of the codebase. The unit testing framework, setup, and configuration are designed to provide thorough validation of the code, ensuring a robust and dependable platform.
 
 
