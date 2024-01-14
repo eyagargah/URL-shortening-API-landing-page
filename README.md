@@ -6,10 +6,11 @@
   - [The project](#the-project)
   - [Screenshot](#screenshot)
   - [Links](#links)
+  - [Live Site URL](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [Useful resources](#useful-resources)
-
+- [Unit tests](#useful-resources)
 
 ## Overview
 A landing page that integrates with the ShortUrl API to mainly shorten URLs [https://rapidapi.com/Walter678/api/shorturl9/]
@@ -36,9 +37,11 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/eyagargah/URL-shortening-API-landing-page]
-- Live Site URL: [Add live site URL here]
 
 
+#### Live Site URL
+
+The live site URL for the landing page is [https://eyagargah.github.io/URL-shortening-API-landing-page/home]. Users can access this URL to interact with the landing page, experience the URL shortening process, and explore its features firsthand.
 ### Built with
 
 - Semantic HTML5 markup
@@ -101,3 +104,34 @@ Here's an example of a simple Jasmine test case:
     const expectedResult = 'https://shorturl.ac/7arzr'
     expect(result).toBe(expectedResult)
   }) 
+
+
+///improvements
+
+### Project Overview
+
+The ShortURL API Landing Page project aims to provide users with a seamless and intuitive platform for generating shortened URLs. By integrating with the ShortURL API, the project addresses the need for quick and efficient URL shortening while offering a user-friendly interface.
+
+#### Project Objectives
+
+The primary objective of the project is to streamline the URL shortening process by leveraging the ShortURL API. This includes providing users with a simple and efficient way to shorten long URLs, copy the shortened links, and manage their shortened URLs effectively. The key features and benefits of using the ShortURL API include fast URL shortening, reliable link management, and seamless integration with existing workflows.
+
+#### User Interaction
+
+Upon visiting the landing page, users will be greeted with a clean and user-friendly interface. They can easily input any valid URL into the provided field and generate a shortened link with a single click. The landing page offers a step-by-step guide, allowing users to quickly copy the shortened link to their clipboard and view a list of their shortened links for easy reference.
+
+#### API Integration
+
+The landing page seamlessly integrates with the ShortURL API, leveraging its endpoints and functionalities to shorten URLs effectively. The integration process ensures that users can enjoy the benefits of the ShortURL API directly from the landing page, without the need for complex configurations or additional steps.
+
+#### Error Handling
+
+In the event of an error, the landing page provides clear and concise error messages to users. For instance, when the form is submitted with an empty input field, users will receive an immediate error message prompting them to enter a valid URL. This proactive error handling ensures a smooth user experience and reduces potential frustration.
+
+
+
+#### Unit Tests
+
+The project includes a comprehensive suite of unit tests written using the Jasmine testing framework. These tests cover critical functionality within the application and ensure the reliability and functionality of the codebase. The unit testing framework, setup, and configuration are designed to provide thorough validation of the code, ensuring a robust and dependable platform.
+
+
