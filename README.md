@@ -67,3 +67,14 @@ We have utilized Jasmine, a behavior-driven development framework for testing Ja
 To run the unit tests locally, follow these steps:
 
 1. Install Jasmine using npm:
+
+
+2. Configure the test environment and setup any necessary dependencies.
+
+### Writing Tests
+
+Our unit tests are organized into separate spec files and cover critical functionality within the application. Each test case follows the Jasmine syntax for assertions and expectations, ensuring thorough validation of our code.
+
+### Running Tests
+
+To run the unit tests, execute the following command:
