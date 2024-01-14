@@ -54,3 +54,16 @@ Users should be able to:
 - [Example resource 1](https://zeroesandones.medium.com/how-to-copy-text-to-clipboard-in-angular-e99c0feda501) - This helped me to copy selected short link to clipboard and paste it. I really liked this pattern and will use it going forward.
 - [Example resource 2](https://www.syncfusion.com/blogs/post/host-angular-app-in-github-pages.aspx) - This helped me to host my project in github pages.
 
+## Unit Tests
+
+This project includes a comprehensive suite of unit tests written using the Jasmine testing framework to ensure the reliability and functionality of the codebase.
+
+### Testing Framework
+
+We have utilized Jasmine, a behavior-driven development framework for testing JavaScript code. Jasmine provides a clean and intuitive syntax for defining and running tests, making it an ideal choice for our testing needs.
+
+### Setup and Configuration
+
+To run the unit tests locally, follow these steps:
+
+1. Install Jasmine using npm:
