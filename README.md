@@ -65,16 +65,6 @@ The project includes a comprehensive suite of unit tests written using the Jasmi
 
 We have utilized Jasmine, a behavior-driven development framework for testing JavaScript code. Jasmine provides a clean and intuitive syntax for defining and running tests, making it an ideal choice for our testing needs.
 
-### Setup and Configuration
-
-To run the unit tests locally, follow these steps:
-
-1. Install Jasmine using npm:
-
-npm install jasmine --save-dev
-
-
-2. Configure the test environment and setup any necessary dependencies.
 
 ### Writing Tests
 
@@ -105,7 +95,6 @@ Here's an example of a simple Jasmine test case:
     expect(result).toBe(expectedResult)
   }) 
 
-### Sample Code
 
 
 
