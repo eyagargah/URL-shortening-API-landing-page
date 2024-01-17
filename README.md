@@ -2,7 +2,7 @@
 
 ## Table of contents
 
-- [Overview](#overview)
+- [Overview]
   - [The project](#the-project)
   - [Screenshot](#screenshot)
   - [Links](#links)
@@ -10,14 +10,17 @@
 - [My process](#my-process)
   - [Built with](#built-with)
   - [Useful resources](#useful-resources)
-- [Unit tests](#useful-resources)
+- [Unit tests](#unit-tests)
+  - [Built with](#built-with)
+  - [Useful resources](#useful-resources)
 
 ## Overview
+
 A landing page that integrates with the ShortUrl API to mainly shorten URLs [https://rapidapi.com/Walter678/api/shorturl9/]
 
 ### The project
-This project provides a web interface for a URL shortening API, allowing users to input a long URL and receive a shortened version that can be used for sharing links. The landing page is designed to be user-friendly and intuitive, making it easy for users to quickly generate shortened URLs.
 
+This project provides a web interface for a URL shortening API, allowing users to input a long URL and receive a shortened version that can be used for sharing links. The landing page is designed to be user-friendly and intuitive, making it easy for users to quickly generate shortened URLs.
 
 ### The challenge
 
@@ -38,10 +41,10 @@ Users should be able to:
 
 - Solution URL: [https://github.com/eyagargah/URL-shortening-API-landing-page]
 
-
 #### Live Site URL
 
 The live site URL for the landing page is [https://eyagargah.github.io/URL-shortening-API-landing-page/home]. Users can access this URL to interact with the landing page, experience the URL shortening process, and explore its features firsthand.
+
 ### Built with
 
 - Semantic HTML5 markup
@@ -50,7 +53,6 @@ The live site URL for the landing page is [https://eyagargah.github.io/URL-short
 - CSS Grid
 - Mobile-first workflow
 - [Angular]
-
 
 ### Useful resources
 
@@ -64,7 +66,6 @@ The project includes a comprehensive suite of unit tests written using the Jasmi
 ### Testing Framework
 
 We have utilized Jasmine, a behavior-driven development framework for testing JavaScript code. Jasmine provides a clean and intuitive syntax for defining and running tests, making it an ideal choice for our testing needs.
-
 
 ### Writing Tests
 
@@ -87,18 +88,11 @@ We also generate test coverage reports using Jasmine's built-in coverage tools. 
 Here's an example of a simple Jasmine test case:
 
 ```javascript
- it('should return short link', async ()=> {
-    const url = 'https://www.google.com';
-    const api = new ApiService()
-    const result = await api.getShortLinks(url)
-    const expectedResult = 'https://shorturl.ac/7arzr'
-    expect(result).toBe(expectedResult)
-  }) 
-
-
-
-
-
-
-
-
+it("should return short link", async () => {
+  const url = "https://www.google.com";
+  const api = new ApiService();
+  const result = await api.getShortLinks(url);
+  const expectedResult = "https://shorturl.ac/7arzr";
+  expect(result).toBe(expectedResult);
+});
+```
